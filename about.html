@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Chandini Karrothu</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --dark-secondary: #2a2a2a;
+            --text-white: #ffffff;
+            --accent-gold: #D4AF37;
+            --nav-hover: #333333;
+            --border-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        .main-content {
+            padding: 6rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .profile-section {
+            background-color: var(--dark-secondary);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            height: fit-content;
+        }
+
+        .profile-image {
+            width: 200px !important;
+            height: 200px !important;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--accent-gold);
+            display: block;
+            object-fit: cover;
+        }
+
+        .contact-card {
+            background-color: var(--dark-secondary);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            padding: 0.8rem;
+            background-color: var(--nav-hover);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        .contact-icon {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .contact-label {
+            color: var(--accent-gold);
+            min-width: 100px;
+            margin-left: 1rem;
+        }
+
+        .contact-value {
+            margin-left: 1rem;
+            flex-grow: 1;
+        }
+
+        .contact-value a {
+            color: var(--text-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: var(--accent-gold);
+        }
+
+        .about-content {
+            background-color: var(--dark-secondary);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .aim-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--nav-hover);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .aim-title {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        
+
+        .interests-section {
+            margin-top: 2rem;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .interest-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background-color: var(--nav-hover);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .interest-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .interest-icon {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="nav.js"></script>
+</head>
+<body>
+    <!-- Your existing navigation header will be here -->
+
+    <div class="main-content">
+        <h1 class="section-title">About Me</h1>
+
+        <div class="about-grid">
+            <div class="profile-section">
+                <img src="assets/Profilepic.jpg" alt="Chandini Karrothu" class="profile-image">
+                
+                <div class="contact-card">
+                    <div class="contact-item">
+                        <i class="fas fa-user contact-icon"></i>
+                        <span class="contact-label">Name</span>
+                        <span class="contact-value">Chandini Karrothu</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <span class="contact-label">Location</span>
+                        <span class="contact-value">Kent, Ohio, USA</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">
+                            <a href="mailto:chandinikarrothu149@gmail.com">chandinikarrothu149@gmail.com</a>
+                        </span>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">
+                            <a href="tel:+13305545014">+1 (330) 554 5014</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="aim-section">
+                    <h2 class="aim-title">
+                        <i class="fas fa-bullseye"></i>
+                        My Mission
+                    </h2>
+                    <p>I leverage my data science expertise to tackle real-world challenges and uncover impactful insights. Whether optimizing models, detecting hidden patterns, or solving complex problems, I thrive on transforming raw data into strategic decisions that drive meaningful change.
+
+                    </p>
+                </div>
+
+                
+
+                <div class="interests-section">
+                    <h2 class="aim-title">
+                        <i class="fas fa-heart"></i>
+                        Interests
+                    </h2>
+                    <div class="interests-grid">
+                        <div class="interest-item">
+                            <i class="fas fa-robot interest-icon"></i>
+                            <span>AI/ML</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-chart-line interest-icon"></i>
+                            <span>Analytics</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-cogs interest-icon"></i>
+
+                            <span>Deep Learning</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-brain interest-icon"></i>
+                            <span>Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

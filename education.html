@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Chandini Karrothu</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --dark-secondary: #2a2a2a;
+            --text-white: #ffffff;
+            --accent-gold: #D4AF37;
+            --nav-hover: #333333;
+            --border-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        .main-content {
+            padding-top: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .education-card {
+            position: relative;
+            background-color: var(--dark-secondary);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            min-width: 300px;
+            flex: 1 1 auto;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(212, 175, 55, 0.2);
+            border-color: var(--accent-gold);
+        }
+
+        .university-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 1.5rem;
+            transition: transform 0.3s ease;
+            padding: 10px;
+            background-color: white;
+            border-radius: 60px;
+        }
+
+        .education-card:hover .university-logo {
+            transform: scale(1.1);
+        }
+
+        
+        .section-title {
+    color: var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+        .education-details h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .education-details p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .education-details i {
+            color: var(--accent-gold);
+            width: 20px;
+        }
+
+        .education-details strong {
+            color: var(--accent-gold);
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        .coursework {
+            background-color: var(--nav-hover);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .coursework-title {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            .education-card {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+            .section {
+                flex-direction: column;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        .timeline-indicator {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--accent-gold);
+            color: var(--dark-bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="nav.js"></script>
+</head>
+<body>
+    <!-- Your existing navigation header will be here -->
+    
+    <div class="main-content">
+        <div class="container">
+            <h1 class="section-title">Education</h1>
+            
+            <div class="section">
+                <!-- Master's details -->
+                <div class="education-card">
+                    <span class="timeline-indicator">Current</span>
+                    <img src="assets/Kentstatelogo.png" alt="Kent State University Logo" class="university-logo">
+                    <div class="education-details">
+                        <h3>Master's in Data Science</h3>
+                        <p><i class="fas fa-university"></i><strong>Institution:</strong> Kent State University</p>
+                        <p><i class="fas fa-graduation-cap"></i><strong>Graduation:</strong> May 2025</p>
+                        <p><i class="fas fa-star"></i><strong>GPA:</strong> 3.96/4.0</p>
+                        <p><i class="fas fa-book"></i><strong>Major:</strong> Data Science</p>
+                        <p><i class="fas fa-file-alt"></i><strong>Transcripts:</strong> <a href="https://drive.google.com/file/d/1mss5meMQ3zzZ4RlOzIiA2HhSaLukLPMw/view?usp=sharing" target="_blank" class="text-accent-gold">View Transcripts</a></p>
+
+                        <div class="coursework">
+                            <h4 class="coursework-title">
+                                <i class="fas fa-laptop-code"></i>
+                                Relevant Coursework
+                            </h4>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Advanced Database Systems Design</span>
+                                <span class="skill-tag">Applied Statistics</span>
+                                <span class="skill-tag">Data Mining Techniques</span>
+                                <span class="skill-tag">Big Data Analytics</span>
+                                <span class="skill-tag">Computational Statistics</span>
+                                <span class="skill-tag">Statistical Learning</span>
+                                <span class="skill-tag">Python Programming</span>
+                                <span class="skill-tag">R Programming</span>
+                                <span class="skill-tag">Computational Health Informatics</span>
+                                <span class="skill-tag">Probabilistic Data Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bachelor's details -->
+                <div class="education-card">
+                    <img src="assets/Osmania_University_Logo - Copy.png" alt="Osmania University Logo" class="university-logo">
+                    <div class="education-details">
+                        <h3>Bachelor's in Mathematics, Statistics, and Computer Science</h3>
+                        <p><i class="fas fa-university"></i><strong>Institution:</strong> Osmania University</p>
+                        <p><i class="fas fa-graduation-cap"></i><strong>Graduation:</strong> October 2020</p>
+                        <p><i class="fas fa-star"></i><strong>GPA:</strong> 9.56/10</p>
+                        <p><i class="fas fa-book"></i><strong>Major:</strong> Mathematics, Statistics, and Computer Science</p>
+
+                        <div class="coursework">
+                            <h4 class="coursework-title">
+                                <i class="fas fa-laptop-code"></i>
+                                Relevant Coursework
+                            </h4>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Calculus</span>
+                                <span class="skill-tag">Probability Theory</span>
+                                <span class="skill-tag">Linear Algebra</span>
+                                <span class="skill-tag">Statistics</span>
+                                <span class="skill-tag">Database Management</span>
+                                <span class="skill-tag">Computer Programming</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

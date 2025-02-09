@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Chandini Karrothu</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --dark-secondary: #2a2a2a;
+            --text-white: #ffffff;
+            --accent-gold: #D4AF37;
+            --nav-hover: #333333;
+            --border-color: #333333;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+            
+            padding-bottom: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .project-item {
+            background-color: var(--dark-secondary);
+            border-radius: 15px;
+            padding: 30px;
+            height: auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-gold), #FFD700);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-item:hover::before {
+            opacity: 1;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .project-icon {
+            background-color: var(--accent-gold);
+            padding: 12px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-icon i {
+            color: var(--dark-bg);
+        }
+
+        .project-name {
+            color: var(--text-white);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .project-line {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border-color), transparent);
+            margin: 15px 0;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            color: #bbb;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            padding: 10px 0;
+        }
+
+        .project-link:hover {
+            color: #FFD700;
+            gap: 12px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .project-tag {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-item {
+            background-color: var(--dark-secondary);
+            border-radius: 15px;
+            padding: 0; /* Changed from 30px to 0 */
+            height: auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            position: relative;
+            display: flex;  /* Added to help with image centering */
+            align-items: center;  /* Center vertically */
+            justify-content: center; 
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .project-item:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="nav.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h1 class="section-title">PROJECTS</h1>
+            <div class="projects">
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="assets/churn.webp" alt="Customer Churn Analysis visualization showing charts and graphs" />
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i data-feather="users"></i>
+                            </div>
+                            <h2 class="project-name">Customer Churn Analysis</h2>
+                        </div>
+                        <hr class="project-line">
+                        <p class="project-description">Developed a predictive model using Logistic Regression and Random Forest on a 10,000-customer bank dataset, achieving 99.8% accuracy in predicting churn. Key factors influencing churn were identified, and targeted retention strategies were formulated to improve customer retention and enhance business growth.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">R & R Markdown</span>
+                            <span class="project-tag">Data Analysis & Visualization</span>
+                            <span class="project-tag">Model Evaluation & Validation</span>
+                        </div>
+                        <a href="https://github.com/Chandini149/Customer-Churn-Analysis" class="project-link" target="_blank">
+                            View Project <i data-feather="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="assets/marketing.webp" alt="Marketing Analytics dashboard showing campaign performance metrics" />
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i data-feather="trending-up"></i>
+                            </div>
+                            <h2 class="project-name">Marketing Analytics</h2>
+                        </div>
+                        <hr class="project-line">
+                        <p class="project-description">Developed classification models (Random Forest, Logistic Regression, SVM, Decision Tree) on telemarketing data, achieving up to 85.69% accuracy. Through feature selection using Lasso regression and Random Forest, I identified the key predictors of Customer Subscription. The insights derived were used to enhance marketing strategies and improve campaign outcomes.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">R</span>
+                            <span class="project-tag">Statistical Analysis</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Data Analysis</span>
+                        </div>
+                        <a href="https://github.com/Chandini149/Marketing-Analytics" class="project-link" target="_blank">
+                            View Project <i data-feather="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="assets/Twitter_image.webp" alt="Twitter Sentiment Analysis visualization showing sentiment distribution" />
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i data-feather="message-circle"></i>
+                            </div>
+                            <h2 class="project-name">Twitter Sentiment Analysis</h2>
+                        </div>
+                        <hr class="project-line">
+                        <p class="project-description">Developed machine learning models to classify tweets as positive or negative using the Sentiment140 dataset (1.6 million tweets). Key highlights include building a preprocessing pipeline with NLTK, applying TF-IDF for feature extraction, and achieving 78% accuracy with Logistic Regression.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Sentiment Analysis</span>
+                        </div>
+                        <a href="https://github.com/Chandini149/Twitter-sentiment-Analysis" class="project-link" target="_blank">
+                            View Project <i data-feather="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
