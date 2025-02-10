@@ -513,7 +513,7 @@ object-fit: cover;
         padding: 20px;
     }
 
-    /* ✅ Keep navigation bar horizontal */
+    /* ✅ Keep navbar horizontal */
     .nav-bar {
         flex-direction: row;
         justify-content: space-between;
@@ -535,33 +535,54 @@ object-fit: cover;
 
     /* ✅ Ensure hero section is properly spaced */
     .hero-section {
-        padding-top: 60px; /* Reduce top padding */
+        padding-top: 80px; /* Adjusted to ensure text is visible */
+        text-align: center;
     }
 
-    /* ✅ Fix text visibility issue */
+    /* ✅ Fix typing text visibility */
     .text-line {
         min-height: 3rem; /* Ensure enough space for typing animation */
         overflow: visible;
         white-space: nowrap;
     }
 
-    /* ✅ Fix profile image alignment */
+    /* ✅ Ensure profile image is centered */
     .profile-image-container {
         width: 220px;
         height: 270px;
-        margin: 0 auto; /* Center image */
+        margin: 0 auto; /* Center the image */
     }
 
-    /* ✅ Fix title sections (Skills, Projects, etc.) */
+    /* ✅ Fix section titles (Skills, Experience, etc.) */
     .section {
         margin-top: 40px;
-        text-align: center; /* Center title text */
+        text-align: center;
         padding: 20px;
     }
 
     .section-title {
-        font-size: 24px; /* Adjust title size for mobile */
+        font-size: 24px;
         margin-bottom: 15px;
+    }
+
+    /* ✅ Fix Experience section (Spacing between job title & years) */
+    .experience-entry {
+        display: flex;
+        flex-direction: column; /* Stack name & years */
+        align-items: center; /* Center everything */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .experience-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px; /* Add spacing below job title */
+    }
+
+    .experience-years {
+        font-size: 16px;
+        color: #ccc; /* Lighter color for years */
     }
 
     /* ✅ Keep social icons centered */
@@ -570,30 +591,30 @@ object-fit: cover;
         justify-content: center;
     }
 
-    /* ✅ Fix endorsement section to display correctly */
+    /* ✅ Ensure endorsement section fits properly */
     .endorsement-container {
         grid-template-columns: 1fr;
     }
 
-    /* ✅ Ensure quote sections fit properly */
+    /* ✅ Make sure quotes display correctly */
     .quote {
         padding: 15px;
     }
 
-    /* ✅ Make the footer full width */
+    /* ✅ Ensure the footer is full width */
     footer {
         width: 100%;
-        text-align: center; /* Center footer content */
+        text-align: center; /* Center content */
         padding: 20px;
     }
 
-    /* ✅ Ensure the footer stretches fully */
+    /* ✅ Stretch footer content across the width */
     footer .flex {
         justify-content: center;
         width: 100%;
     }
 
-    /* ✅ Adjust resume button size */
+    /* ✅ Adjust resume button for better sizing */
     .resume-button {
         font-size: 0.8rem;
         padding: 6px 12px;
