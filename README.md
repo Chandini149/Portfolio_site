@@ -3,7 +3,7 @@
 Welcome to my **portfolio**! 🚀 I'm **Chandini Karrothu**, a passionate **Data Scientist** with expertise in **Machine Learning, Deep Learning, NLP, and Data Analytics**. My portfolio showcases my journey through **data-driven problem-solving**, **predictive modeling**, and **business intelligence**.  
 
 ## 🔥 What You'll Find Here  
-🔹 **Projects** – Real-world applications in **ML, AI, NLP, and Data Visualization**  
+🔹 **Projects** – Real-world applications in **ML, NLP, and Data Visualization**  
 🔹 **Publications** – My research on **Deep Learning & Medical AI**  
 🔹 **Skills** – A showcase of my expertise in **Python, R, SQL, Power BI, and more**  
 🔹 **Professional Recommendations** – Endorsements from experts in the field  
