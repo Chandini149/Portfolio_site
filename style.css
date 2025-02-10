@@ -513,9 +513,9 @@ object-fit: cover;
         padding: 20px;
     }
 
-    /* Keep nav-bar horizontal */
+    /* ✅ Keep navigation bar horizontal */
     .nav-bar {
-        flex-direction: row; 
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 0.5rem 1rem;
@@ -530,45 +530,70 @@ object-fit: cover;
     }
 
     .nav-brand {
-        font-size: 1.2rem; /* Slightly smaller logo text */
+        font-size: 1.2rem;
     }
 
-    /* Fix hero section spacing so text is visible */
+    /* ✅ Ensure hero section is properly spaced */
     .hero-section {
-        padding-top: 70px; /* Reduce top padding */
+        padding-top: 60px; /* Reduce top padding */
     }
 
-    /* Make sure typing text is always visible */
+    /* ✅ Fix text visibility issue */
     .text-line {
-        min-height: 2rem; /* Keeps space for text animation */
-        overflow: hidden;
+        min-height: 3rem; /* Ensure enough space for typing animation */
+        overflow: visible;
         white-space: nowrap;
     }
 
-    /* Adjust profile image to fit mobile screen */
+    /* ✅ Fix profile image alignment */
     .profile-image-container {
         width: 220px;
         height: 270px;
         margin: 0 auto; /* Center image */
     }
 
-    /* Ensure social icons don't stack too much */
+    /* ✅ Fix title sections (Skills, Projects, etc.) */
+    .section {
+        margin-top: 40px;
+        text-align: center; /* Center title text */
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 24px; /* Adjust title size for mobile */
+        margin-bottom: 15px;
+    }
+
+    /* ✅ Keep social icons centered */
     .social-icons {
         margin-top: 10px;
         justify-content: center;
     }
 
-    /* Keep endorsement section in a single column */
+    /* ✅ Fix endorsement section to display correctly */
     .endorsement-container {
         grid-template-columns: 1fr;
     }
 
-    /* Reduce padding to make quotes fit well */
+    /* ✅ Ensure quote sections fit properly */
     .quote {
         padding: 15px;
     }
 
-    /* Adjust resume button size */
+    /* ✅ Make the footer full width */
+    footer {
+        width: 100%;
+        text-align: center; /* Center footer content */
+        padding: 20px;
+    }
+
+    /* ✅ Ensure the footer stretches fully */
+    footer .flex {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* ✅ Adjust resume button size */
     .resume-button {
         font-size: 0.8rem;
         padding: 6px 12px;
