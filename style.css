@@ -509,66 +509,68 @@ object-fit: cover;
 }
 
 @media (max-width: 768px) {
-    /* ✅ Ensure section titles (Skills, Experience, etc.) are visible */
-    .section-title {
-        font-size: 2rem; /* Keep it readable */
-        margin-bottom: 2rem; /* Give enough space below */
+    .container {
+        padding: 20px;
     }
 
-    /* ✅ Reduce profile image slightly to fit better */
-    .profile-image-container {
-        width: 200px; /* Slightly smaller */
-        height: 240px;
-        margin: 0 auto;
+    /* Keep nav-bar horizontal */
+    .nav-bar {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        width: 100%;
     }
 
-    /* ✅ Improve experience section readability */
-    .experience-card {
-        padding: 1.2rem; /* Reduce padding slightly */
-        margin: 15px auto; /* Keep proper spacing */
+    .nav-links {
+        flex-direction: row; /* Keep links in a row */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        gap: 0.5rem;
+        justify-content: center;
     }
 
-    /* ✅ Keep role titles & durations readable */
-    .role-title {
-        font-size: 1.3rem;
-        text-align: center;
-        margin-bottom: 8px;
+    .nav-brand {
+        font-size: 1.2rem; /* Slightly smaller logo text */
     }
 
-    .organization-info {
-        flex-direction: column;
-        text-align: center;
-        font-size: 1rem;
+    /* Fix hero section spacing so text is visible */
+    .hero-section {
+        padding-top: 70px; /* Reduce top padding */
     }
 
-    .duration-badge {
-        font-size: 0.85rem;
-        padding: 0.3rem 0.7rem;
-        margin-top: 5px; /* Add space below title */
-    }
-
-    /* ✅ Ensure text animation doesn't get cut off */
+    /* Make sure typing text is always visible */
     .text-line {
-        min-height: 3.2rem; /* Increase space for animated text */
+        min-height: 2rem; /* Keeps space for text animation */
         overflow: hidden;
         white-space: nowrap;
     }
 
-    /* ✅ Footer stays full width */
-    footer {
-        width: 100vw; /* Stretch fully */
-        text-align: center;
-        padding: 20px;
+    /* Adjust profile image to fit mobile screen */
+    .profile-image-container {
+        width: 220px;
+        height: 270px;
+        margin: 0 auto; /* Center image */
     }
 
-    footer .flex {
+    /* Ensure social icons don't stack too much */
+    .social-icons {
+        margin-top: 10px;
         justify-content: center;
-        width: 100%;
     }
-}
 
-    /* ✅ Reduce footer text size */
-    footer p {
-        font-size: 0.9rem;
+    /* Keep endorsement section in a single column */
+    .endorsement-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce padding to make quotes fit well */
+    .quote {
+        padding: 15px;
+    }
+
+    /* Adjust resume button size */
+    .resume-button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
     }
 }
