@@ -16,7 +16,7 @@ Welcome to my **portfolio**! 🚀 I'm **Chandini Karrothu**, a passionate **Data
 📈 **Statistical Analysis & Predictive Modeling** – Regression, Time-Series Forecasting  
 
 ## 🌐 Explore My Portfolio  
-👀 **Check out my full portfolio** 👉 [My Portfolio Website](#)  
+👀 **Check out my full portfolio** 👉 [My Portfolio Website](https://portfolio-site-ten-alpha.vercel.app/)  
 📫 **Let’s connect!** Reach out to me on [LinkedIn](https://www.linkedin.com/in/chandini-karrothu-1469b1206)  
 
 📩 **Email me at:** chandinikarrothu149@gmail.com  
