@@ -513,47 +513,62 @@ object-fit: cover;
         padding: 20px;
     }
 
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px; /* Reduce gap for better spacing */
-    }
-
-    .profile-image-container {
-        width: 250px;
-        height: 300px;
-        margin: 0 auto; /* Center the profile image */
-    }
-
-    .text-container {
-        min-width: auto;
+    /* Keep nav-bar horizontal */
+    .nav-bar {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
         width: 100%;
     }
 
-    .nav-bar {
-        flex-direction: column;
-        align-items: center;
-        padding: 0.8rem;
-    }
-
     .nav-links {
-        flex-direction: column;
-        gap: 0.8rem;
-        align-items: center; /* Ensures centered alignment */
+        flex-direction: row; /* Keep links in a row */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        gap: 0.5rem;
+        justify-content: center;
     }
 
+    .nav-brand {
+        font-size: 1.2rem; /* Slightly smaller logo text */
+    }
+
+    /* Fix hero section spacing so text is visible */
+    .hero-section {
+        padding-top: 70px; /* Reduce top padding */
+    }
+
+    /* Make sure typing text is always visible */
+    .text-line {
+        min-height: 2rem; /* Keeps space for text animation */
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    /* Adjust profile image to fit mobile screen */
+    .profile-image-container {
+        width: 220px;
+        height: 270px;
+        margin: 0 auto; /* Center image */
+    }
+
+    /* Ensure social icons don't stack too much */
     .social-icons {
         margin-top: 10px;
+        justify-content: center;
     }
 
+    /* Keep endorsement section in a single column */
     .endorsement-container {
         grid-template-columns: 1fr;
     }
 
+    /* Reduce padding to make quotes fit well */
     .quote {
         padding: 15px;
     }
 
+    /* Adjust resume button size */
     .resume-button {
         font-size: 0.8rem;
         padding: 6px 12px;
