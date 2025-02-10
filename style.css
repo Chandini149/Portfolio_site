@@ -509,11 +509,7 @@ object-fit: cover;
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    /* ✅ Keep navbar horizontal */
+    /* ✅ Fixes navigation layout */
     .nav-bar {
         flex-direction: row;
         justify-content: space-between;
@@ -523,8 +519,8 @@ object-fit: cover;
     }
 
     .nav-links {
-        flex-direction: row; /* Keep links in a row */
-        flex-wrap: wrap; /* Allow wrapping if needed */
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 0.5rem;
         justify-content: center;
     }
@@ -533,88 +529,84 @@ object-fit: cover;
         font-size: 1.2rem;
     }
 
-    /* ✅ Ensure hero section is properly spaced */
+    /* ✅ Ensures hero section content is visible */
     .hero-section {
-        padding-top: 80px; /* Adjusted to ensure text is visible */
+        padding-top: 70px;
         text-align: center;
     }
 
-    /* ✅ Fix typing text visibility */
     .text-line {
-        min-height: 3rem; /* Ensure enough space for typing animation */
+        min-height: 3rem;
         overflow: visible;
-        white-space: nowrap;
+        white-space: normal; /* Allows wrapping instead of cutting off */
     }
 
-    /* ✅ Ensure profile image is centered */
+    /* ✅ Fixes experience card layout */
+    .timeline {
+        padding: 1rem 0;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .experience-card {
+        width: 100%; /* Take full width */
+        float: none; /* Remove float */
+        margin: 20px auto; /* Centering */
+        position: relative;
+    }
+
+    .experience-card:nth-child(odd)::before,
+    .experience-card:nth-child(even)::before {
+        left: 10px; /* Ensure timeline dots stay aligned */
+    }
+
+    /* ✅ Fixes text spacing inside experience cards */
+    .role-title {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .organization-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .duration-badge {
+        position: relative;
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    /* ✅ Centers profile image */
     .profile-image-container {
         width: 220px;
         height: 270px;
-        margin: 0 auto; /* Center the image */
+        margin: 0 auto;
     }
 
-    /* ✅ Fix section titles (Skills, Experience, etc.) */
-    .section {
-        margin-top: 40px;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .section-title {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-
-    /* ✅ Fix Experience section (Spacing between job title & years) */
-    .experience-entry {
-        display: flex;
-        flex-direction: column; /* Stack name & years */
-        align-items: center; /* Center everything */
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .experience-name {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 5px; /* Add spacing below job title */
-    }
-
-    .experience-years {
-        font-size: 16px;
-        color: #ccc; /* Lighter color for years */
-    }
-
-    /* ✅ Keep social icons centered */
+    /* ✅ Keeps social icons centered */
     .social-icons {
         margin-top: 10px;
         justify-content: center;
     }
 
-    /* ✅ Ensure endorsement section fits properly */
-    .endorsement-container {
-        grid-template-columns: 1fr;
-    }
-
-    /* ✅ Make sure quotes display correctly */
-    .quote {
-        padding: 15px;
-    }
-
-    /* ✅ Ensure the footer is full width */
+    /* ✅ Fixes footer alignment issue */
     footer {
-        width: 100%;
-        text-align: center; /* Center content */
+        width: 100vw; /* Force full width */
+        text-align: center;
         padding: 20px;
     }
 
-    /* ✅ Stretch footer content across the width */
     footer .flex {
         justify-content: center;
         width: 100%;
     }
 
-    /* ✅ Adjust resume button for better sizing */
+    /* ✅ Adjusts resume button size */
     .resume-button {
         font-size: 0.8rem;
         padding: 6px 12px;
