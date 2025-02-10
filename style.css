@@ -509,13 +509,9 @@ object-fit: cover;
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    /* Keep nav-bar horizontal */
+    /* ✅ Fixes navigation layout */
     .nav-bar {
-        flex-direction: row; 
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 0.5rem 1rem;
@@ -523,52 +519,94 @@ object-fit: cover;
     }
 
     .nav-links {
-        flex-direction: row; /* Keep links in a row */
-        flex-wrap: wrap; /* Allow wrapping if needed */
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 0.5rem;
         justify-content: center;
     }
 
     .nav-brand {
-        font-size: 1.2rem; /* Slightly smaller logo text */
+        font-size: 1.2rem;
     }
 
-    /* Fix hero section spacing so text is visible */
+    /* ✅ Ensures hero section content is visible */
     .hero-section {
-        padding-top: 70px; /* Reduce top padding */
+        padding-top: 70px;
+        text-align: center;
     }
 
-    /* Make sure typing text is always visible */
     .text-line {
-        min-height: 2rem; /* Keeps space for text animation */
-        overflow: hidden;
-        white-space: nowrap;
+        min-height: 3rem;
+        overflow: visible;
+        white-space: normal; /* Allows wrapping instead of cutting off */
     }
 
-    /* Adjust profile image to fit mobile screen */
+    /* ✅ Fixes experience card layout */
+    .timeline {
+        padding: 1rem 0;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .experience-card {
+        width: 100%; /* Take full width */
+        float: none; /* Remove float */
+        margin: 20px auto; /* Centering */
+        position: relative;
+    }
+
+    .experience-card:nth-child(odd)::before,
+    .experience-card:nth-child(even)::before {
+        left: 10px; /* Ensure timeline dots stay aligned */
+    }
+
+    /* ✅ Fixes text spacing inside experience cards */
+    .role-title {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .organization-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .duration-badge {
+        position: relative;
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    /* ✅ Centers profile image */
     .profile-image-container {
         width: 220px;
         height: 270px;
-        margin: 0 auto; /* Center image */
+        margin: 0 auto;
     }
 
-    /* Ensure social icons don't stack too much */
+    /* ✅ Keeps social icons centered */
     .social-icons {
         margin-top: 10px;
         justify-content: center;
     }
 
-    /* Keep endorsement section in a single column */
-    .endorsement-container {
-        grid-template-columns: 1fr;
+    /* ✅ Fixes footer alignment issue */
+    footer {
+        width: 100vw; /* Force full width */
+        text-align: center;
+        padding: 20px;
     }
 
-    /* Reduce padding to make quotes fit well */
-    .quote {
-        padding: 15px;
+    footer .flex {
+        justify-content: center;
+        width: 100%;
     }
 
-    /* Adjust resume button size */
+    /* ✅ Adjusts resume button size */
     .resume-button {
         font-size: 0.8rem;
         padding: 6px 12px;
