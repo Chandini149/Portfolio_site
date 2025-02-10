@@ -509,50 +509,63 @@ object-fit: cover;
 }
 
 @media (max-width: 768px) {
-    /* ✅ Reduce section title size */
+    /* ✅ Ensure section titles (Skills, Experience, etc.) are visible */
     .section-title {
-        font-size: 1.8rem; /* Smaller title */
-        margin-bottom: 1.5rem;
+        font-size: 2rem; /* Keep it readable */
+        margin-bottom: 2rem; /* Give enough space below */
     }
 
-    /* ✅ Reduce profile image size */
+    /* ✅ Reduce profile image slightly to fit better */
     .profile-image-container {
-        width: 180px; /* Smaller width */
-        height: 220px; /* Smaller height */
+        width: 200px; /* Slightly smaller */
+        height: 240px;
+        margin: 0 auto;
     }
 
-    /* ✅ Reduce text size inside experience section */
+    /* ✅ Improve experience section readability */
+    .experience-card {
+        padding: 1.2rem; /* Reduce padding slightly */
+        margin: 15px auto; /* Keep proper spacing */
+    }
+
+    /* ✅ Keep role titles & durations readable */
     .role-title {
-        font-size: 1.2rem; /* Reduce job title size */
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 8px;
     }
 
-    .organization-info span {
-        font-size: 1rem; /* Reduce company name size */
+    .organization-info {
+        flex-direction: column;
+        text-align: center;
+        font-size: 1rem;
     }
 
     .duration-badge {
-        font-size: 0.8rem; /* Reduce duration text size */
-        padding: 0.2rem 0.6rem;
+        font-size: 0.85rem;
+        padding: 0.3rem 0.7rem;
+        margin-top: 5px; /* Add space below title */
     }
 
-    /* ✅ Reduce achievement text */
-    .achievement-item span {
-        font-size: 0.9rem;
+    /* ✅ Ensure text animation doesn't get cut off */
+    .text-line {
+        min-height: 3.2rem; /* Increase space for animated text */
+        overflow: hidden;
+        white-space: nowrap;
     }
 
-    /* ✅ Reduce general body text */
-    body {
-        font-size: 0.95rem; /* Slightly smaller */
+    /* ✅ Footer stays full width */
+    footer {
+        width: 100vw; /* Stretch fully */
+        text-align: center;
+        padding: 20px;
     }
 
-    /* ✅ Reduce navigation spacing to prevent stacking */
-    .nav-bar {
-        padding: 0.4rem 1rem;
+    footer .flex {
+        justify-content: center;
+        width: 100%;
     }
-
-    .nav-links {
-        gap: 0.4rem; /* Reduce space between links */
-    }
+}
 
     /* ✅ Reduce footer text size */
     footer p {
