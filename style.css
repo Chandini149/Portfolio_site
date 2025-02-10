@@ -507,3 +507,55 @@ object-fit: cover;
         font-size: 0.8rem;
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px; /* Reduce gap for better spacing */
+    }
+
+    .profile-image-container {
+        width: 250px;
+        height: 300px;
+        margin: 0 auto; /* Center the profile image */
+    }
+
+    .text-container {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.8rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center; /* Ensures centered alignment */
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    .endorsement-container {
+        grid-template-columns: 1fr;
+    }
+
+    .quote {
+        padding: 15px;
+    }
+
+    .resume-button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
