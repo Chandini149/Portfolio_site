@@ -509,106 +509,145 @@ object-fit: cover;
 }
 
 @media (max-width: 768px) {
-    /* ✅ Fixes navigation layout */
-    .nav-bar {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5rem 1rem;
-        width: 100%;
+    /* Body Reset */
+    body {
+        margin: 0;
+        padding-top: 200px; /* Adjust based on your header height */
+        background-color: #000000;
+        color: #ffffff;
+        min-height: 100vh;
+        position: relative;
     }
 
-    .nav-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
-    }
-
-    .nav-brand {
-        font-size: 1.2rem;
-    }
-
-    /* ✅ Ensures hero section content is visible */
-    .hero-section {
-        padding-top: 70px;
-        text-align: center;
-    }
-
-    .text-line {
-        min-height: 3rem;
-        overflow: visible;
-        white-space: normal; /* Allows wrapping instead of cutting off */
-    }
-
-    /* ✅ Fixes experience card layout */
-    .timeline {
-        padding: 1rem 0;
-    }
-
-    .timeline::before {
+    /* Fixed Header Styles */
+    header {
+        position: fixed;
+        top: 0;
         left: 0;
-    }
-
-    .experience-card {
-        width: 100%; /* Take full width */
-        float: none; /* Remove float */
-        margin: 20px auto; /* Centering */
-        position: relative;
-    }
-
-    .experience-card:nth-child(odd)::before,
-    .experience-card:nth-child(even)::before {
-        left: 10px; /* Ensure timeline dots stay aligned */
-    }
-
-    /* ✅ Fixes text spacing inside experience cards */
-    .role-title {
-        font-size: 1.3rem;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .organization-info {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .duration-badge {
-        position: relative;
-        display: block;
-        margin: 10px auto;
-        text-align: center;
-    }
-
-    /* ✅ Centers profile image */
-    .profile-image-container {
-        width: 220px;
-        height: 270px;
-        margin: 0 auto;
-    }
-
-    /* ✅ Keeps social icons centered */
-    .social-icons {
-        margin-top: 10px;
-        justify-content: center;
-    }
-
-    /* ✅ Fixes footer alignment issue */
-    footer {
-        width: 100vw; /* Force full width */
-        text-align: center;
-        padding: 20px;
-    }
-
-    footer .flex {
-        justify-content: center;
         width: 100%;
+        background-color: #000000;
+        z-index: 1000;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
-    /* ✅ Adjusts resume button size */
-    .resume-button {
-        font-size: 0.8rem;
-        padding: 6px 12px;
+    /* Portfolio Title */
+    .portfolio-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #ffffff;
+    }
+
+    /* Navigation Container */
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+
+    /* Navigation Links */
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: #ffd700;
+    }
+
+    /* Social Icons Row */
+    .social-icons-container {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .social-icons-container a {
+        color: #ffd700;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+
+    /* Download Resume Button */
+    .download-resume {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: transparent;
+        border: 2px solid #ffd700;
+        color: #ffd700;
+        text-decoration: none;
+        border-radius: 4px;
+        margin: 0.5rem 0;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .download-resume:hover {
+        background: #ffd700;
+        color: #000000;
+    }
+
+    /* Main Content Area */
+    main {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    /* Section Styling */
+    .section {
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Common Section Title */
+    .section-title {
+        color: #ffd700;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* Profile Section */
+    .profile-section {
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 3px solid #ffd700;
+        margin: 0 auto 2rem;
+        overflow: hidden;
+    }
+
+    .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1rem;
+        text-align: center;
+        background: #000000;
+        margin-top: 2rem;
     }
 }
