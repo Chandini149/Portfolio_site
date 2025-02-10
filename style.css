@@ -509,106 +509,53 @@ object-fit: cover;
 }
 
 @media (max-width: 768px) {
-    /* ✅ Fixes navigation layout */
-    .nav-bar {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5rem 1rem;
-        width: 100%;
+    /* ✅ Reduce section title size */
+    .section-title {
+        font-size: 1.8rem; /* Smaller title */
+        margin-bottom: 1.5rem;
     }
 
-    .nav-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
+    /* ✅ Reduce profile image size */
+    .profile-image-container {
+        width: 180px; /* Smaller width */
+        height: 220px; /* Smaller height */
     }
 
-    .nav-brand {
-        font-size: 1.2rem;
-    }
-
-    /* ✅ Ensures hero section content is visible */
-    .hero-section {
-        padding-top: 70px;
-        text-align: center;
-    }
-
-    .text-line {
-        min-height: 3rem;
-        overflow: visible;
-        white-space: normal; /* Allows wrapping instead of cutting off */
-    }
-
-    /* ✅ Fixes experience card layout */
-    .timeline {
-        padding: 1rem 0;
-    }
-
-    .timeline::before {
-        left: 0;
-    }
-
-    .experience-card {
-        width: 100%; /* Take full width */
-        float: none; /* Remove float */
-        margin: 20px auto; /* Centering */
-        position: relative;
-    }
-
-    .experience-card:nth-child(odd)::before,
-    .experience-card:nth-child(even)::before {
-        left: 10px; /* Ensure timeline dots stay aligned */
-    }
-
-    /* ✅ Fixes text spacing inside experience cards */
+    /* ✅ Reduce text size inside experience section */
     .role-title {
-        font-size: 1.3rem;
-        text-align: center;
-        margin-bottom: 10px;
+        font-size: 1.2rem; /* Reduce job title size */
     }
 
-    .organization-info {
-        flex-direction: column;
-        text-align: center;
+    .organization-info span {
+        font-size: 1rem; /* Reduce company name size */
     }
 
     .duration-badge {
-        position: relative;
-        display: block;
-        margin: 10px auto;
-        text-align: center;
+        font-size: 0.8rem; /* Reduce duration text size */
+        padding: 0.2rem 0.6rem;
     }
 
-    /* ✅ Centers profile image */
-    .profile-image-container {
-        width: 220px;
-        height: 270px;
-        margin: 0 auto;
+    /* ✅ Reduce achievement text */
+    .achievement-item span {
+        font-size: 0.9rem;
     }
 
-    /* ✅ Keeps social icons centered */
-    .social-icons {
-        margin-top: 10px;
-        justify-content: center;
+    /* ✅ Reduce general body text */
+    body {
+        font-size: 0.95rem; /* Slightly smaller */
     }
 
-    /* ✅ Fixes footer alignment issue */
-    footer {
-        width: 100vw; /* Force full width */
-        text-align: center;
-        padding: 20px;
+    /* ✅ Reduce navigation spacing to prevent stacking */
+    .nav-bar {
+        padding: 0.4rem 1rem;
     }
 
-    footer .flex {
-        justify-content: center;
-        width: 100%;
+    .nav-links {
+        gap: 0.4rem; /* Reduce space between links */
     }
 
-    /* ✅ Adjusts resume button size */
-    .resume-button {
-        font-size: 0.8rem;
-        padding: 6px 12px;
+    /* ✅ Reduce footer text size */
+    footer p {
+        font-size: 0.9rem;
     }
 }
