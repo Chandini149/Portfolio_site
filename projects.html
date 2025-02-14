@@ -27,7 +27,9 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2rem 1rem; /* Reduced padding for mobile */
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .section {
@@ -52,24 +54,19 @@
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            padding: 20px;
+            grid-template-columns: 1fr; /* Single column on mobile by default */
+            gap: 20px;
+            padding: 10px;
+            width: 100%;
+            margin: 0 auto;
         }
 
         .project-item {
-            background-color: var(--dark-secondary);
-            border-radius: 15px;
-            padding: 30px;
-            height: auto;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+            max-width: 100%;
         }
+
 
         .project-item::before {
             content: '';
@@ -210,38 +207,30 @@
         /* Responsive Breakpoints */
         @media (min-width: 640px) {
             .container {
-                padding: 4rem 2rem;
-            }
-            
+                padding: 3rem 2rem;
+        }
+    
             .projects {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 padding: 20px;
-            }
-
-            .project-item {
-                max-width: 100%;
-            }
         }
+    }
 
         @media (min-width: 768px) {
             .projects {
                 grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            }
         }
+    }
 
         @media (min-width: 1024px) {
             .container {
                 padding: 4rem;
-            }
+        }
 
             .projects {
                 grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            }
-
-            .project-content {
-                padding: 2rem;
-            }
         }
+    }
 
         /* Hover effects */
         @media (hover: hover) {
