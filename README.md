@@ -12,7 +12,7 @@ Welcome to my **portfolio**! 🚀 I'm **Chandini Karrothu**, a passionate **Data
 💡 **Machine Learning & AI** – TensorFlow, Scikit-learn, PyTorch  
 📊 **Data Analysis & Visualization** – Pandas, NumPy, Matplotlib, Seaborn, Power BI, Tableau  
 🔍 **NLP & Text Analytics** – NLTK, SpaCy 
-🛠 **Databases & Big Data** – SQL, PostgreSQL, MongoDB, Spark  
+🛠 **Databases** – SQL 
 📈 **Statistical Analysis & Predictive Modeling** – Regression, Time-Series Forecasting  
 
 ## 🌐 Explore My Portfolio  
