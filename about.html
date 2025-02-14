@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>About - Chandini Karrothu</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -20,6 +20,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            max-width: 100%;
         }
 
         body {
@@ -28,6 +29,12 @@
             color: var(--text-white);
             line-height: 1.6;
         }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }   
+
 
         .main-content {
             padding: 6rem;
@@ -187,14 +194,49 @@
         }
 
         @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .main-content {
-                padding: 1rem;
-            }
-        }
+    .main-content {
+        padding: 1rem;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .about-grid {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        gap: 1rem;
+    }
+
+    .profile-section,
+    .about-content,
+    .contact-card {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .profile-image {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-label {
+        min-width: auto;
+        margin-bottom: 0.3rem;
+    }
+
+    .interests-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.5rem;
+    }
+}
+
+
+
+
     </style>
     <link rel="stylesheet" href="style.css">
     <script src="nav.js"></script>
