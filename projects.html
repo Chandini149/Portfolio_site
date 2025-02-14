@@ -207,6 +207,59 @@
             padding: 30px;
         }
 
+        /* Responsive Breakpoints */
+        @media (min-width: 640px) {
+            .container {
+                padding: 4rem 2rem;
+            }
+            
+            .projects {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                padding: 20px;
+            }
+
+            .project-item {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .projects {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 4rem;
+            }
+
+            .projects {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+
+            .project-content {
+                padding: 2rem;
+            }
+        }
+
+        /* Hover effects */
+        @media (hover: hover) {
+            .project-item:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            .project-item:hover .project-image img {
+                transform: scale(1.05);
+            }
+
+            .project-link:hover {
+                color: #FFD700;
+                gap: 12px;
+            }
+        }
+
 
 
     </style>
