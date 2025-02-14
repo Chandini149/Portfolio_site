@@ -276,68 +276,6 @@ footer .social-icon:hover {
     display: block; /* Shows the nav links when the hamburger is clicked */
   }
   
-  /* General Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Root Variables */
-:root {
-    --dark-bg: #1a1a1a;
-    --dark-secondary: #2a2a2a;
-    --text-white: #ffffff;
-    --accent-gold: #D4AF37;
-    --nav-hover: #333333;
-    --border-color: #333333;
-    --font-family: Arial, sans-serif;
-}
-
-/* Global Styles */
-body {
-    font-family: var(--font-family);
-    background-color: var(--dark-bg);
-    color: var(--text-white);
-    margin: 0;
-    padding: 0;
-}
-
-/* Navigation Bar Styles */
-.nav-bar {
-    background-color: var(--dark-secondary);
-    padding: 1rem 2rem;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.nav-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-white);
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.nav-link {
-    font-size: 0.9rem;
-    color: var(--text-white);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    white-space: nowrap;
-}
-
 .nav-link:hover {
     color: var(--accent-gold);
 }
