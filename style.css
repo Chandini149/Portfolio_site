@@ -28,7 +28,7 @@ body {
 /* Navigation Bar Styles */
 .nav-bar {
     background-color: var(--dark-secondary);
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     position: fixed;
     top: 0;
     width: 100%;
@@ -37,12 +37,23 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-direction: row; /* Ensure horizontal layout */
+    height: 70px;
 }
 
 .nav-brand {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-white);
+    margin-right: auto;
+}
+
+/* Right side menu container */
+.nav-menu-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: auto;
 }
 
 .nav-links {
@@ -334,6 +345,7 @@ body {
 /* Navigation Toggle Button */
 .nav-toggle {
     display: none;
+    margin-left: auto;
     cursor: pointer;
     padding: 10px;
     z-index: 1000;
@@ -623,7 +635,6 @@ footer .social-icon:hover {
     }
 }
 
-/* Add these styles to your existing CSS */
 
 /* Improved Mobile Navigation */
 @media (max-width: 768px) {
@@ -744,6 +755,24 @@ footer .social-icon:hover {
     }
 }
 
+/* Update the media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .nav-menu-container {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background-color: var(--dark-secondary);
+        padding: 1rem;
+        flex-direction: column;
+        display: none;
+    }
 
+    .nav-menu-container.active {
+        display: flex;
+    }
 
-  
+    .nav-toggle {
+        display: block;
+    }
+}
