@@ -33,7 +33,7 @@ const navigationTemplate = `
                 </svg>
             </a>
         </div>
-        <a href="https://drive.google.com/file/d/1lgsmZ40-Wwrpl9hqWwlHClsNPhD58Iq_/view?usp=sharing" class="resume-button" target="blank">
+        <a href="https://drive.google.com/file/d/1O3zxtrU7bn6d-u8PXYKqGKNjiLP2DLsb/view?usp=sharing" class="resume-button" target="blank">
             Download Resume
         </a>
     </div>

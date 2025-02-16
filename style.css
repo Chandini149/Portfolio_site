@@ -205,6 +205,7 @@ footer .social-icon:hover {
     50% { opacity: 0; }
 }
 
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     /* Adjust Navbar */
@@ -263,7 +264,7 @@ footer .social-icon:hover {
     .nav-link {
         font-size: 0.75rem;
     }
-}
+} 
 
 /* Default state for nav-links (hidden on mobile) */
 .nav-links {
