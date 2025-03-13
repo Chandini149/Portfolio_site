@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publication - Chandini Karrothu</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        
         :root {
             --dark-bg: #1a1a1a;
             --dark-secondary: #2a2a2a;
@@ -22,8 +22,6 @@
             padding: 0;
         }
 
-        
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: var(--dark-bg);
@@ -36,8 +34,6 @@
             margin: 0 auto;
             padding: 2rem;
         }
-
-
 
         /* Title styling */
         .section-title {
@@ -64,8 +60,9 @@
 
         .section {
             background-color: var(--dark-secondary);
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* Add media query for responsiveness */
@@ -85,12 +82,13 @@
             padding: 2rem;
             margin-bottom: 2rem;
             border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         .publication-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.1);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.3);
         }
 
         .publication-item h3 {
@@ -114,10 +112,10 @@
 
         .publication-meta {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
+            flex-wrap: wrap; /* Allow wrapping */
+            gap: 0.75rem; /* Slightly reduced gap */
+            margin-bottom: 1rem; /* Reduced from 1.5rem */
+            padding-bottom: 1rem; /* Reduced from 1.5rem */
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -126,6 +124,53 @@
             padding: 0.5rem 1rem;
             border-radius: 5px;
             font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .meta-item:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+        
+        .meta-item i {
+            margin-right: 0.5rem;
+            color: var(--accent-gold);
+        }
+
+        .authors-section {
+            display: flex;
+            flex-wrap: nowrap; /* Change from wrap to nowrap */
+            gap: 0.5rem; /* Reduce the gap from 1rem */
+            margin-bottom: 1.5rem;
+            align-items: center;
+            overflow-x: auto; /* Add horizontal scrolling if needed */
+        }
+        
+        .author {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: rgba(26, 26, 26, 0.5);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .author:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .author-initial {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            color: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 0.5rem;
         }
 
         .project-link {
@@ -145,6 +190,154 @@
         .project-link:hover {
             background-color: transparent;
             color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .skills-section {
+    margin-top: 2.5rem;
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.4), rgba(40, 40, 40, 0.3));
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 3px solid var(--accent-gold);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.skills-section::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-gold);
+    opacity: 0.15;
+    border-radius: 50%;
+    filter: blur(15px);
+}
+
+.skills-title {
+    color: var(--accent-gold);
+    margin-bottom: 1.4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.skills-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent-gold);
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.skill-group-title {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.92;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-item {
+    background: rgba(212, 175, 55, 0.08);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+.skill-item:hover {
+    background: rgba(212, 175, 55, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item:hover::before {
+    transform: translateX(100%);
+}
+        
+        .citation-section {
+            margin-top: 2rem;
+            background: rgba(26, 26, 26, 0.5);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px dashed var(--border-color);
+        }
+        
+        .citation-title {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .citation-text {
+            font-family: monospace;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+        
+        .copy-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--accent-gold);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-button:hover {
+            background: rgba(212, 175, 55, 0.3);
+        }
+        
+        .copy-button i {
+            margin-right: 0.5rem;
         }
 
         .description-section {
@@ -153,11 +346,54 @@
             border-radius: 8px;
             margin-top: 1rem;
         }
+        
+        .abstract-text {
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        .abstract-text p {
+            margin-bottom: 1rem;
+            text-indent: 1rem;
+        }
+        
+        .findings-section {
+            margin-top: 2rem;
+            background: rgba(212, 175, 55, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-gold);
+        }
+        
+        .findings-title {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .findings-list {
+            list-style-type: none;
+        }
+        
+        .findings-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .findings-list li:before {
+            content: "•";
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
 
         .image-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
             margin: 2rem 0;
         }
 
@@ -167,15 +403,17 @@
             overflow: hidden;
             background: var(--dark-bg);
             padding: 1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
             aspect-ratio: 4/3;
             display: flex;
             flex-direction: column;
+            border: 1px solid var(--border-color);
         }
 
         .image-container:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+            border-color: var(--accent-gold);
         }
 
         .image-wrapper {
@@ -189,7 +427,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .image-container:hover img {
@@ -198,19 +436,19 @@
 
         .image-caption {
             margin-top: 0.75rem;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--text-white);
             text-align: center;
             padding: 0.5rem;
             background: rgba(0, 0, 0, 0.5);
             border-radius: 4px;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .image-container:hover .image-caption {
             color: var(--accent-gold);
+            background: rgba(0, 0, 0, 0.7);
         }
-        
     </style>
     <link rel="stylesheet" href="style.css">
     <script src="nav.js"></script>
@@ -223,75 +461,150 @@
     <div class="main-content">
         <h1 class="section-title">Publication</h1>
 
-    <!-- Single Container -->
-    
+        <!-- Single Container -->
         <div class="section">
-            
-
             <div class="publication-details">
                 <div class="publication-item">
                     <h3>Decoding Cellular Complexity: A Deep Learning Expedition in Blood Cell Image Classification</h3>
                     
                     <div class="publication-meta">
                         <div class="meta-item">
-                            <strong>Conference:</strong> Future of Information and Communication Conference 2025
+                            <i class="fas fa-university"></i>
+                            <strong>Conference : &nbsp; </strong> Future of Information and Communication Conference 2025
                         </div>
                         <div class="meta-item">
-                            <strong>Date:</strong> April, 2025
+                            <i class="fas fa-calendar-alt"></i>
+                            <strong>Date : &nbsp;  </strong> April, 2025
                         </div>
                         <div class="meta-item">
-                            <strong>Location:</strong> Berlin, Germany
+                            <i class="fas fa-map-marker-alt"></i>
+                            <strong>Location : &nbsp;  </strong> Berlin, Germany
                         </div>
                     </div>
 
-                    <p><strong>Authors:</strong> Chandini Karrothu, Shivani Battu, Likhitha Marrapu, AnuRanjani Thota</p>
+                    <div class="authors-section">
+                        <strong style="margin-right: 0.5rem;">Authors:</strong>
+                        <div class="author">
+                            <div class="author-initial">C</div>
+                            <span>Chandini Karrothu</span>
+                        </div>
+                        <div class="author">
+                            <div class="author-initial">S</div>
+                            <span>Shivani Battu</span>
+                        </div>
+                        <div class="author">
+                            <div class="author-initial">L</div>
+                            <span>Likhitha Marrapu</span>
+                        </div>
+                        <div class="author">
+                            <div class="author-initial">A</div>
+                            <span>AnuRanjani Thota</span>
+                        </div>
+                    </div>
 
                     <div class="image-grid">
-                
-                <div class="image-container">
-                    <div class="image-wrapper">
-                        <img src="assets/Results.png" alt="Results Visualization" />
+                        <div class="image-container">
+                            <div class="image-wrapper">
+                                <img src="assets/Results.png" alt="Results Visualization" />
+                            </div>
+                            <p class="image-caption">Model Performance</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-wrapper">
+                                <img src="assets/classification_image.png" alt="Blood Cell Classification" />
+                            </div>
+                            <p class="image-caption">Blood Cell Classification Results by Hybrid Model</p>
+                        </div>
                     </div>
-                    <p class="image-caption">Model Performance</p>
-                </div>
-                <div class="image-container">
-                    <div class="image-wrapper">
-                        <img src="assets/classification_image.png" alt="Blood Cell Classification" />
-                    </div>
-                    <p class="image-caption">Blood Cell Classification Results by Hybrid Model</p>
-                </div>
-            </div>
-
                     
                     <div class="description-section">
-                        <p><strong>Abstract:</strong> Accurate classification of blood cell images is pivotal for
-                            advancing medical diagnostics. Our study introduces a robust frame-
-                            work that harnesses advanced deep learning techniques to enhance di-
-                            agnostic accuracy and enable timely interventions in healthcare. We
-                            meticulously preprocessed a large dataset sourced from the Hospital
-                            Clinic of Barcelona, ensuring its suitability for model training. Employ-
-                            ing an ensemble of cutting-edge deep learning architectures, including
-                            Convolutional Neural Networks (CNNs), U-Net, ResNet-50, VGG-16,
-                            DenseNet-201, Supervised Contrastive Learning, MobileNet-V2, Incep-
-                            tionV3, Xception, and a novel hybrid InceptionV3-Xception model. Com-
-                            prehensive training and evaluation were conducted across these archi-
-                            tectures. The results demonstrated significant improvements in blood
-                            cell image classification, with the hybrid InceptionV3-Xception model
-                            achieving a remarkable test accuracy of 98.51%. Furthermore, the study
-                            includes a detailed analysis of the effects of data shuffling on model per-
-                            formance, offering critical insights into the robustness and generalization
-                            capabilities of the proposed framework. This research contributes sub-
-                            stantially to the field of medical image analysis, providing scalable solu-
-                            tions for accurate blood cell classification and advancing the prospects
-                            of healthcare diagnostics.
-                        </p>
+                        <p><strong>Abstract:</strong></p>
+                        <div class="abstract-text">
+                            <p>Accurate classification of blood cell images is pivotal for advancing medical diagnostics. Our study introduces a robust framework that harnesses advanced deep learning techniques to enhance diagnostic accuracy and enable timely interventions in healthcare. We meticulously preprocessed a large dataset sourced from the Hospital Clinic of Barcelona, ensuring its suitability for model training. Employing an ensemble of cutting-edge deep learning architectures, including Convolutional Neural Networks (CNNs), U-Net, ResNet-50, VGG-16, DenseNet-201, Supervised Contrastive Learning, MobileNet-V2, InceptionV3, Xception, and a novel hybrid InceptionV3-Xception model. Comprehensive training and evaluation were conducted across these architectures. The results demonstrated significant improvements in blood cell image classification, with the hybrid InceptionV3-Xception model achieving a remarkable test accuracy of 98.51%. Furthermore, the study includes a detailed analysis of the effects of data shuffling on model performance, offering critical insights into the robustness and generalization capabilities of the proposed framework. This research contributes substantially to the field of medical image analysis, providing scalable solutions for accurate blood cell classification and advancing the prospects of healthcare diagnostics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="findings-section">
+                        <h4 class="findings-title">Key Findings</h4>
+                        <ul class="findings-list">
+                            <li>Hybrid InceptionV3-Xception model achieved 98.51% test accuracy</li>
+                            <li>Data preprocessing significantly improved model performance</li>
+                            <li>Ensemble approach demonstrated superior results compared to individual models</li>
+                            <li>Data shuffling analysis provided insights into model generalization capabilities</li>
+                            <li>The framework is scalable for healthcare diagnostic applications</li>
+                        </ul>
                     </div>
 
-                    <a href="https://drive.google.com/file/d/1bN9sWyI5Dsla6a4pNcYfQxkQER020azZ/view" class="project-link" target="_blank">View Project Report</a>
+                    <div class="skills-section">
+                        <h4 class="skills-title">Technologies & Skills</h4>
+                        <div class="skills-container">
+                            <div class="skill-group">
+                                <h5 class="skill-group-title">Deep Learning</h5>
+                                <div class="skills-grid">
+                                    <div class="skill-item">CNN</div>
+                                    <div class="skill-item">InceptionV3</div>
+                                    <div class="skill-item">Xception</div>
+                                    <div class="skill-item">Supervised Contrastive Learning</div>
+                                    <div class="skill-item">Image Classification</div>
+                                    <div class="skill-item">Model Optimization</div>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h5 class="skill-group-title">Programming & Frameworks</h5>
+                                <div class="skills-grid">
+                                    <div class="skill-item">Python</div>
+                                    <div class="skill-item">TensorFlow</div>
+                                    <div class="skill-item">Keras</div>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h5 class="skill-group-title">Data Science</h5>
+                                <div class="skills-grid">
+                                    <div class="skill-item">Data Preprocessing</div>
+                                    <div class="skill-item">Statistical Analysis</div>
+                                    <div class="skill-item">Model Evaluation Metrics</div>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h5 class="skill-group-title">Research</h5>
+                                <div class="skills-grid">
+                                    <div class="skill-item">Research Methodology Skills</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="citation-section">
+                        <h4 class="citation-title">Citation</h4>
+                        <div class="citation-text">Battu, S. et al. (2025). Decoding Cellular Complexity: A Deep Learning Expedition in Blood Cell Image Classification. In: Arai, K. (eds) Advances in Information and Communication. FICC 2025. Lecture Notes in Networks and Systems, vol 1285. Springer, Cham. https://doi.org/10.1007/978-3-031-84460-7_31</div>
+                        <button class="copy-button" onclick="copyToClipboard('.citation-text')">
+                            <i class="fas fa-copy"></i> Copy Citation
+                        </button>
+                    </div>
+
+                    <a href="https://lnkd.in/gYDQgSaJ" class="project-link" target="_blank">
+                        <i class="fas fa-book"></i> View Publication
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
     
-</div>
+    <script>
+        function copyToClipboard(elementClass) {
+            const text = document.querySelector(elementClass).innerText;
+            navigator.clipboard.writeText(text).then(
+                function() {
+                    // Success feedback
+                    const button = document.querySelector('.copy-button');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    setTimeout(function() {
+                        button.innerHTML = originalText;
+                    }, 2000);
+                }
+            );
+        }
+    </script>
 </body>
 </html>

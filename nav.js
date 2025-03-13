@@ -106,3 +106,87 @@ function insertNavigation() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', insertNavigation);
+
+
+
+// In your nav.js file
+
+// First, create and append the CSS for particles
+function addParticleStyles() {
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `
+      .particle {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: var(--accent-gold, #D4AF37);
+        border-radius: 50%;
+        opacity: 0.3;
+        pointer-events: none;
+      }
+      
+      body {
+        background-image: 
+          radial-gradient(circle at 80% 10%, rgba(212, 175, 55, 0.2), transparent 40%),
+          radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.2), transparent 40%);
+      }
+    `;
+    document.head.appendChild(styleSheet);
+  }
+  
+  // Function to create the particle elements
+  function createParticles() {
+    const body = document.querySelector('body');
+    const particleCount = 30;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      
+      // Random positioning
+      const posX = Math.random() * window.innerWidth;
+      const posY = Math.random() * window.innerHeight;
+      
+      // Random size
+      const size = Math.random() * 3 + 1;
+      
+      // Apply styles
+      particle.style.left = `${posX}px`;
+      particle.style.top = `${posY}px`;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      
+      // Random animation
+      const duration = Math.random() * 20 + 10;
+      particle.style.animation = `floatAnimation ${duration}s ease-in-out infinite`;
+      particle.style.animationDelay = `${Math.random() * 5}s`;
+      
+      body.appendChild(particle);
+    }
+  }
+  
+  // Add the float animation if it doesn't exist
+  function addFloatAnimation() {
+    if (!document.querySelector('#floatAnimationStyle')) {
+      const styleSheet = document.createElement("style");
+      styleSheet.id = 'floatAnimationStyle';
+      styleSheet.textContent = `
+        @keyframes floatAnimation {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          25% { transform: translateY(-10px) rotate(1deg); }
+          75% { transform: translateY(10px) rotate(-1deg); }
+        }
+      `;
+      document.head.appendChild(styleSheet);
+    }
+  }
+  
+  // Initialize everything once the DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    addParticleStyles();
+    addFloatAnimation();
+    createParticles();
+  });
+
+  // In your nav.js file
+
