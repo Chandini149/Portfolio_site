@@ -193,6 +193,106 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
         }
+
+        .skills-section {
+    margin-top: 2.5rem;
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.4), rgba(40, 40, 40, 0.3));
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 3px solid var(--accent-gold);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.skills-section::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-gold);
+    opacity: 0.15;
+    border-radius: 50%;
+    filter: blur(15px);
+}
+
+.skills-title {
+    color: var(--accent-gold);
+    margin-bottom: 1.4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.skills-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent-gold);
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.skill-group-title {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.92;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-item {
+    background: rgba(212, 175, 55, 0.08);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+.skill-item:hover {
+    background: rgba(212, 175, 55, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item:hover::before {
+    transform: translateX(100%);
+}
         
         .citation-section {
             margin-top: 2rem;
@@ -434,6 +534,45 @@
                             <li>The framework is scalable for healthcare diagnostic applications</li>
                         </ul>
                     </div>
+
+                    <div class="skills-section">
+    <h4 class="skills-title">Technologies & Skills</h4>
+    <div class="skills-container">
+        <div class="skill-group">
+            <h5 class="skill-group-title">Deep Learning</h5>
+            <div class="skills-grid">
+                <div class="skill-item">CNN</div>
+                <div class="skill-item">InceptionV3</div>
+                <div class="skill-item">Xception</div>
+                <div class="skill-item">Supervised Contrastive Learning</div>
+                <div class="skill-item">Image Classification</div>
+                <div class="skill-item">Model Optimization</div>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h5 class="skill-group-title">Programming & Frameworks</h5>
+            <div class="skills-grid">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">TensorFlow</div>
+                <div class="skill-item">Keras</div>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h5 class="skill-group-title">Data Science</h5>
+            <div class="skills-grid">
+                <div class="skill-item">Data Preprocessing</div>
+                <div class="skill-item">Statistical Analysis</div>
+                <div class="skill-item">Model Evaluation Metrics</div>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h5 class="skill-group-title">Research</h5>
+            <div class="skills-grid">
+                <div class="skill-item">Research Methodology Skills</div>
+            </div>
+        </div>
+    </div>
+</div>
                     
                     <div class="citation-section">
                         <h4 class="citation-title">Citation</h4>
