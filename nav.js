@@ -8,7 +8,7 @@ const navigationTemplate = `
         <div class="hamburger"></div>
     </div>
     <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
+        <a href="Home.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="education.html" class="nav-link">Education</a>
         <a href="experience.html" class="nav-link">Experience</a>
