@@ -190,3 +190,72 @@ function addParticleStyles() {
 
   // In your nav.js file
 
+// Wait for the DOM to be fully loaded before executing
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to add the "Back to Home" button before footer
+    function addHomeButton() {
+      // First check if the button already exists or if we're on the landing page
+      if (document.querySelector('#back-to-home-btn') || 
+          window.location.pathname.endsWith('landingpage.html')) {
+        return; // Don't add button if it already exists or if we're on the landing page
+      }
+      
+      // Create the button container with overflow handling
+      const homeButtonContainer = document.createElement('div');
+      homeButtonContainer.id = 'back-to-home-btn';
+      homeButtonContainer.style.textAlign = 'center';
+      homeButtonContainer.style.margin = '50px auto 30px auto';
+      homeButtonContainer.style.zIndex = '100';
+      homeButtonContainer.style.width = '100%';
+      homeButtonContainer.style.maxWidth = '100%';
+      homeButtonContainer.style.overflowX = 'hidden'; // Prevent horizontal scrolling
+      
+      // Create the actual button with gold styling to match your theme
+      const homeButton = document.createElement('a');
+      // Calculate path to landing page based on current location
+      homeButton.href = window.location.pathname.includes('/') ? 
+                        window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1) + 'landingpage.html' : 
+                        'landingpage.html';
+      homeButton.textContent = 'Back to Home';
+      homeButton.style.display = 'inline-block';
+      homeButton.style.padding = '12px 30px';
+      homeButton.style.backgroundColor = 'transparent';
+      homeButton.style.color = '#D4AF37'; // Gold color
+      homeButton.style.border = '2px solid #D4AF37';
+      homeButton.style.borderRadius = '30px';
+      homeButton.style.textDecoration = 'none';
+      homeButton.style.fontWeight = 'bold';
+      homeButton.style.transition = 'all 0.3s ease';
+      homeButton.style.cursor = 'pointer';
+      homeButton.style.maxWidth = '90%'; // Ensure button doesn't cause overflow
+      homeButton.style.boxSizing = 'border-box'; // Include padding in width calculation
+      
+      // Add hover effects
+      homeButton.onmouseover = function() {
+        this.style.backgroundColor = 'rgba(212, 175, 55, 0.1)';
+        this.style.transform = 'translateY(-3px)';
+        this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+      };
+      
+      homeButton.onmouseout = function() {
+        this.style.backgroundColor = 'transparent';
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'none';
+      };
+      
+      // Add the button to its container
+      homeButtonContainer.appendChild(homeButton);
+      
+      // Add the container before the footer (if it exists) or at the end of the body
+      const footer = document.querySelector('footer');
+      if (footer) {
+        document.body.insertBefore(homeButtonContainer, footer);
+      } else {
+        // If no footer exists, append to body
+        document.body.appendChild(homeButtonContainer);
+      }
+    }
+  
+    // Call the function to add the home button
+    addHomeButton();
+  });
