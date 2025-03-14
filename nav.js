@@ -214,8 +214,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const homeButton = document.createElement('a');
       // Calculate path to landing page based on current location
       homeButton.href = window.location.pathname.includes('/') ? 
-                        window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1) + 'landingpage.html' : 
-                        'landingpage.html';
+                        window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1) + 'Home.html' : 
+                        'Home.html';
       homeButton.textContent = 'Back to Home';
       homeButton.style.display = 'inline-block';
       homeButton.style.padding = '12px 30px';
