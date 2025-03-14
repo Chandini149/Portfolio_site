@@ -7,14 +7,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
         :root {
-            --dark-bg: #1a1a1a;
-            --dark-secondary: #2a2a2a;
+            --dark-bg: #0e1117;
+            --dark-secondary: #1a1f2c;
             --text-white: #ffffff;
             --accent-gold: #D4AF37;
-            --nav-hover: #333333;
-            --border-color: #333333;
+            --accent-gold-transparent: rgba(212, 175, 55, 0.2);
         }
-
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -22,313 +20,364 @@
             color: var(--text-white);
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 80% 10%, var(--accent-gold-transparent), transparent 40%),
+                radial-gradient(circle at 20% 80%, var(--accent-gold-transparent), transparent 40%);
         }
 
-        .nav-bar {
-            background-color: var(--dark-secondary);
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: var(--accent-gold);
+            border-radius: 50%;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+            max-height: 100vh;
         }
 
-        .nav-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--text-white);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-link {
-            color: var(--text-white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--accent-gold);
-        }
-
-        .hero-section {
-            padding-top: 80px;
-            min-height: 100vh !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 60px; /* Adjust the spacing between text and image */
-            max-width: 900px; /* Reduce max-width to bring them towards the center */
-            width: 100%;
-            padding: 0 20px;
-            margin: 0 auto; /* Center horizontally */
-        }
-
-
-        .text-container {
+        .left-section {
             flex: 1;
-            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 4rem;
+            /* Remove or reduce this: padding-bottom: 6rem; */
         }
 
-        .text-line {
-            min-height: 2.5rem;
-            margin-bottom: 1rem;
+        .right-section {
+            flex: 1;
+            display: flex;
+            align-items: center; /* This centers vertically */
+            justify-content: center;
+            position: relative;
         }
 
-        .text-1 { font-size: 1.7rem; color: var(--accent-gold); font-weight: bold; }
-        .text-2 { font-size: 1.5rem; color: var(--text-white); font-weight: bold; }
-        .text-3 { font-size: 2.5rem; color: var(--accent-gold); font-weight: bold; }
-        .text-4 { font-size: 2rem; color: var(--text-white); font-weight: bold; }
-        
-
-        .profile-image-container {
-            width: 300px;
+        .profile-container {
+            width: 350px;
             height: 350px;
-            flex-shrink: 0;
-            clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
-            overflow: hidden;
-            border: 3px solid var(--accent-gold);
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    
-        /* Hover Effect: Slightly enlarge with shadow */
-        &:hover {
-            transform: scale(1.1);  /* Zoom in */
-            box-shadow: 0px 0px 20px var(--accent-gold); /* Glow effect */
-            }
+            position: relative;
+            perspective: 1000px;
+            /* Add this if needed: margin-top: -20px; */
+        }
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out;
+            animation: floatAnimation 8s ease-in-out infinite;
+        }
+
+        .image-wrapper:hover {
+            animation-play-state: paused;
         }
 
         .profile-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--accent-gold);
+            position: relative;
+            z-index: 2;
+            box-shadow: 
+                0 0 20px var(--accent-gold-transparent),
+                0 0 40px var(--accent-gold-transparent);
+            transition: all 0.5s ease;
         }
 
+        .profile-image:hover {
+            box-shadow: 
+                0 0 30px var(--accent-gold-transparent),
+                0 0 60px var(--accent-gold-transparent);
+        }
 
-        .resume-button {
-            background-color: var(--dark-bg);
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-size: 16px;
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px dashed var(--accent-gold);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .circle-1 {
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            animation: rotate 30s linear infinite;
+        }
+
+        .circle-2 {
+            top: -40px;
+            left: -40px;
+            right: -40px;
+            bottom: -40px;
+            animation: rotate 40s linear infinite reverse;
+        }
+
+        .main-heading {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .main-heading::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-gold);
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .main-heading:hover::after {
+            transform: scaleX(1);
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--text-white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .name:hover {
+            transform: translateX(10px);
+        }
+
+        .content {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 95%;
+        }
+
+        .highlight {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .cta-button {
+            padding: 0.7rem 1.8rem;
+            border: 2px solid var(--accent-gold);
+            border-radius: 30px;
             font-weight: bold;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
             text-decoration: none;
-            color: var(--accent-gold);
-            border: 2px solid var(--accent-gold);
         }
 
-        .resume-button:hover {
+        .primary-button {
             background-color: var(--accent-gold);
             color: var(--dark-bg);
-            transform: translateY(-2px);
+        }
+
+        .secondary-button {
+            background-color: transparent;
+            color: var(--accent-gold);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover::before {
+            width: 100%;
         }
 
         .social-icons {
+            position: relative;
+            margin-top: 2rem;
             display: flex;
-            gap: 1rem;
-            align-items: center;
+            gap: 1.5rem;
         }
 
         .social-icon {
             color: var(--text-white);
-            transition: color 0.3s ease;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
         }
 
         .social-icon:hover {
             color: var(--accent-gold);
+            transform: translateY(-5px);
         }
 
-        #endorsements {
-            padding: 60px 20px;
-        }
-
-        .endorsement-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
-
-        .quote {
-            background-color: var(--dark-secondary);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quote:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            border-color: var(--accent-gold);
-        }
-
-        .quote img {
+        .data-pattern {
+            position: absolute;
             width: 100%;
-            height: auto;
-            border-radius: 4px;
-            transition: all 0.3s ease;
+            height: 100%;
+            background-image: radial-gradient(var(--accent-gold-transparent) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            pointer-events: none;
         }
 
-        .quote:hover img {
-            transform: scale(1.02);
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        .quote .author {
-            margin-top: 15px;
-            color: var(--text-white);
-            font-style: italic;
-            transition: all 0.3s ease;
+        @keyframes floatAnimation {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(1deg); }
+            75% { transform: translateY(10px) rotate(-1deg); }
         }
 
-        .quote:hover .author {
-            color: var(--accent-gold);
-        }
-
-        footer {
-            background-color: var(--dark-secondary);
-            color: var(--accent-gold);
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        footer .flex {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        footer .social-icon {
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        footer .social-icon:hover {
-            color: var(--text-white);
-        }
-
-        .typed-text {
-            display: inline-block;
-            min-width: 1ch;
-        }
-
-        .typing-animation::after {
-            content: '|';
-            animation: blink 0.7s infinite;
-            color: var(--accent-gold);
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                max-height: none;
+                height: auto;
+            }
+            
+            .left-section, .right-section {
+                padding: 2rem;
+            }
+            
+            .left-section {
+                padding-bottom: 2rem;
+            }
+            
+            .profile-container {
+                width: 250px;
+                height: 250px;
+                margin: 1rem auto;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+            }
+            
+            .social-icons {
+                position: relative;
+                left: 0;
+                bottom: 0;
+                margin-top: 1.5rem;
+            }
         }
     </style>
-
-<link rel="stylesheet" href="style.css">
-<script src="nav.js">window.location.href = "landingpage.html";</script>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-    
 </head>
 <body>
+    <div class="data-pattern"></div>
     
-    <div class="hero-section">
-        <div class="hero-content">
-            <div class="text-container">
-                <div class="text-line text-1">Hi!</div>
-                <div class="text-line text-2">I am</div>
-                <div class="text-line text-3">Chandini Karrothu</div>
-                <div class="text-line text-4">I <span class="typed-text" id="typed"></span></div>
-
-    
+    <div class="container">
+        <div class="left-section">
+            <h2 class="main-heading">Finding Stories in Data</h2>
+            <h1 class="name">Chandini Karrothu</h1>
+            
+            <div class="content">
+                <p>Data is messy, but every number has a story to tell. I uncover patterns, connect the dots, and turn chaos into clarity—building models, visualizing trends, and letting data speak for itself. No magic, just curiosity and the right tools.</p>
             </div>
-            <div class="profile-image-container">
-                <img src="assets/Profilepic.jpg" alt="Chandini Karrothu" class="profile-image">
+            
+            <div class="cta-buttons">
+                <a href="index.html" class="cta-button primary-button">Explore Portfolio</a>
+                <a href="mailto:chandinikarrothu149@gmail.com" class="cta-button secondary-button">Contact Me</a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://github.com/Chandini149" class="social-icon" target="_blank">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.37 0 0 5.37 0 12C0 17.31 3.435 21.795 8.205 23.385C8.805 23.49 9.03 23.13 9.03 22.815C9.03 22.53 9.015 21.585 9.015 20.58C6 21.135 5.22 19.845 4.98 19.17C4.845 18.825 4.26 17.76 3.75 17.475C3.33 17.25 2.73 16.695 3.735 16.68C4.68 16.665 5.355 17.55 5.58 17.91C6.66 19.725 8.385 19.215 9.075 18.9C9.18 18.12 9.495 17.595 9.84 17.295C7.17 16.995 4.38 15.96 4.38 11.37C4.38 10.065 4.845 8.985 5.61 8.145C5.49 7.845 5.07 6.615 5.73 4.965C5.73 4.965 6.735 4.65 9.03 6.195C9.99 5.925 11.01 5.79 12.03 5.79C13.05 5.79 14.07 5.925 15.03 6.195C17.325 4.635 18.33 4.965 18.33 4.965C18.99 6.615 18.57 7.845 18.45 8.145C19.215 8.985 19.68 10.05 19.68 11.37C19.68 15.975 16.875 16.995 14.205 17.295C14.64 17.67 15.015 18.39 15.015 19.515C15.015 21.12 15 22.41 15 22.815C15 23.13 15.225 23.505 15.825 23.385C18.2072 22.5807 20.2772 21.0497 21.7437 19.0074C23.2101 16.965 23.9993 14.5143 24 12C24 5.37 18.63 0 12 0Z" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/chandini-karrothu-1469b1206" class="social-icon" target="_blank">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.368C3.274 4.23 4.194 3.305 5.337 3.305C6.477 3.305 7.4 4.23 7.4 5.368C7.4 6.507 6.476 7.433 5.337 7.433ZM7.117 20.452H3.555V9H7.117V20.452Z" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        
+        <div class="right-section">
+            <div class="profile-container">
+                <div class="image-wrapper">
+                    <img src="assets/Profilepic.jpg" alt="Chandini Karrothu" class="profile-image">
+                    <div class="decorative-circle circle-1"></div>
+                    <div class="decorative-circle circle-2"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <section id="endorsements">
-        <h3 class="text-3xl font-bold text-center mb-12 text-[#D4AF37]">PROFESSIONAL RECOMMENDATIONS</h3>
-        <div class="endorsement-container">
-            <div class="quote">
-                <img src="assets/Endorsement1.png" alt="Recommendation Screenshot">
-                <p class="author mt-4">– Safa K. Shubbar, Part-time Instructor, Kent State University.</p>
-            </div>
-            <div class="quote">
-                <img src="assets/Endorsement2.png" alt="Recommendation Screenshot">
-                <p class="author mt-4">– Emily Metzgar, Director, School of Media & Journalism, Kent State University.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>2025 Chandini Karrothu</p>
-        <div class="flex">
-            <a href="https://github.com/Chandini149" class="social-icon" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/chandini-karrothu-1469b1206" class="social-icon" target="_blank">LinkedIn</a>
-        </div>
-    </footer>
-
     <script>
-        const phrases = ["analyze data", "build models", "am a data scientist"];
-        const typingSpeed = 100; // Speed of typing each letter
-        const erasingSpeed = 50; // Speed of erasing each letter
-        const pauseTime = 1000; // Pause before erasing and typing next phrase
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isErasing = false;
-
-        function typeText() {
-            const typedElement = document.getElementById("typed");
-            const currentPhrase = phrases[phraseIndex];
-
-            if (!isErasing && charIndex < currentPhrase.length) {
-                typedElement.textContent += currentPhrase.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeText, typingSpeed);
-            } else if (isErasing && charIndex > 0) {
-                typedElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-                setTimeout(typeText, erasingSpeed);
-            } else {
-                isErasing = !isErasing;
-                if (!isErasing) {
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                }
-                setTimeout(typeText, pauseTime);
+        // Create floating particles
+        function createParticles() {
+            const body = document.querySelector('body');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random positioning
+                const posX = Math.random() * window.innerWidth;
+                const posY = Math.random() * window.innerHeight;
+                
+                // Random size
+                const size = Math.random() * 3 + 1;
+                
+                // Apply styles
+                particle.style.left = `${posX}px`;
+                particle.style.top = `${posY}px`;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `floatAnimation ${duration}s ease-in-out infinite`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                
+                body.appendChild(particle);
             }
         }
-
-        window.addEventListener("load", typeText);
-
-
+        
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+        });
     </script>
 </body>
-</html>
