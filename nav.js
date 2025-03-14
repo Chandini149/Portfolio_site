@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function addHomeButton() {
       // First check if the button already exists or if we're on the landing page
       if (document.querySelector('#back-to-home-btn') || 
-          window.location.pathname.endsWith('landingpage.html')) {
+          window.location.pathname.endsWith('Home.html')) {
         return; // Don't add button if it already exists or if we're on the landing page
       }
       
